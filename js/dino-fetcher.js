@@ -3,6 +3,7 @@ exports.dinoFetch = function(output){
   var dinoName;
   $.get(dinoFetcher, function(response) {
      dinoName = response[0][0];
+     $('#dinoGen').html(dinoName);
      var wikiFetcher = "https://en.wikipedia.org/w/api.php?action=query&titles=" + dinoName + "&indexpageids=1&prop=extracts%7Cimageinfo&iiprop=url&rvprop=content&format=json";
      $.ajax( {
       url: wikiFetcher,
@@ -16,14 +17,12 @@ exports.dinoFetch = function(output){
       },
       xhrFields: { withCredentials: true },
       success: function(response) {
-        console.log(response);
         var pageId = response.query.pageids[0];
         var pages = response.query.pages;
         var extract = pages[pageId].extract;
         var position = extract.search("</p>");
         var newString;
         newString = extract.slice(0, position + 4);
-        console.log(newString);
         $(output).html(newString);
       }
     });

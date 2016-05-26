@@ -1,8 +1,20 @@
+.jumbotron{
+  text-align: center;
+  color: teal;
+}
 body{
-  background-color: teal;
   color: #eaeaea;
+  background-color: teal;
 }
 
 button{
   color: black;
+}
+
+#output{
+  display: none;
+}
+
+form{
+  display: inline;
 }

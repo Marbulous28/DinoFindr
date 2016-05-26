@@ -9,14 +9,31 @@
   </head>
   <body>
     <div class="container">
-      <h1>GET YOU A DINO</h1>
+      <h1 class="jumbotron">Real Dino or Fake Dino?</h1>
       <div class="row">
-        <div id="output" class="col-md-offset-1 col-md-5">
+        <div class="col-md-5">
+          <h1><span id="dinoGen"></span></h1>
+          <div id="guesses">
+            <form id="real" method="post">
+              <button type="submit" class="btn">Real?</button>
+            </form>
+            <form id="fake" method="post">
+              <button type="submit" class="btn">Fake?</button>
+            </form>
+          </div>
+          <div id="output">
+            <h2><span id="answer"></span></h2>
+            <div id="wiki">
+            </div>
+            <form id="next">
+              <button type="submit" class="btn">Next</button>
+            </form>
+          </div>
+        </div>
+        <div class="col-md-7">
+          <h3>Score: <span id="points"></span></h3>
         </div>
       </div>
-      <form id="getDino" method="post">
-        <button type="submit" class="btn">Get It</button>
-      </form>
     </div>
   </body>
 </html>
